@@ -6,7 +6,7 @@
 
 
 int main() {
-    
+
     // Inicialização da semente aleatória com srand(time(NULL)) para garantir escolhas distintas a cada execução do jogo
     // Sem isso, a função rand() repetiria sempre a mesma sequência de mapas.
     srand(time(NULL)); 
@@ -19,6 +19,7 @@ int main() {
     
     // 2. Carrega o cenário usando a string sorteada
     carregar_cenario(meu_labirinto, caminho_sorteado);
+
 
     return 0;
 }

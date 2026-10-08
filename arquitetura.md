@@ -26,7 +26,7 @@ typedef struct {
     int pontosColetados;
     int pontosRestantes;
     int dificuldade; // 1 = Fácil, 2 = Difícil
-} EstadoJogo;
+} Estado_jogo;
 ```
 
 ## 2. Assinaturas e Módulos (Headers)

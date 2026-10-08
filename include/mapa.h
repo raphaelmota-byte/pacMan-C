@@ -2,9 +2,8 @@
 #ifndef MAPA_H
 #define MAPA_H
 
-// Constantes globais corretas (sem "int" e sem ";")
-#define MAX_LINHAS 100
-#define MAX_COLUNAS 100
+#include "estado.h"
+
 
 void carregar_cenario(char mapa[MAX_LINHAS][MAX_COLUNAS], char *caminhoArquivo);
 void sortear_caminho_mapa(char *caminho);
