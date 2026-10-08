@@ -16,7 +16,7 @@ void sortear_caminho_mapa(char *caminho) {
 }
 
 
-void carregar_cenario(char mapa[MAX_LINHAS][MAX_COLUNAS], char *caminhoArquivo){
+void carregar_cenario(Estado_jogo *jogo, char *caminhoArquivo){
     int qtd_linhas = 0;
     
    
@@ -28,10 +28,10 @@ void carregar_cenario(char mapa[MAX_LINHAS][MAX_COLUNAS], char *caminhoArquivo){
     }
     
     // Lemos o arquivo linha por linha usando o fgets
-    while (fgets(mapa[qtd_linhas], MAX_COLUNAS, meu_arquivo) != NULL) {
+    while (fgets(jogo -> mapa[qtd_linhas], MAX_COLUNAS, meu_arquivo) != NULL) {
         
         // removendo o '\n' (quebra de linha) e substitui por '\0'
-        mapa[qtd_linhas][strcspn(mapa[qtd_linhas], "\n")] = '\0';
+        jogo -> mapa[qtd_linhas][strcspn(jogo -> mapa[qtd_linhas], "\n")] = '\0';
         
         qtd_linhas++; 
     }
@@ -41,7 +41,7 @@ void carregar_cenario(char mapa[MAX_LINHAS][MAX_COLUNAS], char *caminhoArquivo){
     // Imprime para confirmar
     printf("Mapa carregado com sucesso (%d linhas):\n", qtd_linhas);
     for (int i = 0; i < qtd_linhas; i++) {
-        printf("%s\n", mapa[i]);
+        printf("%s\n", jogo -> mapa[i]);
     }
 }
 

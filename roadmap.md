@@ -4,7 +4,7 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 
 ## Fase 1: Estrutura Base e Leitura de Arquivo
 - [X] Criar a estrutura de pastas (`src/`, `include/`, `data/`).
-- [ ] Criar os arquivos de cabeçalho (`.h`) com as definições das `structs`.
+- [X] Criar os arquivos de cabeçalho (`.h`) com as definições das `structs`.
 - [X] Criar pelo menos dois cenários `.txt` na pasta `data/` seguindo o modelo do trabalho.
 - [X] Implementar a função para ler o arquivo `.txt` e imprimir a matriz pura no terminal.
 
