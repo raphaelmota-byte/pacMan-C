@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h> // Para rand() e srand()
 #include <time.h> // para time()
+#include <conio.h>  // _getch(): lê a tecla sem precisar de Enter
+#include <ctype.h>  // tolower(): aceita 'w' e 'W' do mesmo jeito
 #include "mapa.h" // Usamos aspas duplas para importar nossos próprios .h
 
 
@@ -96,3 +98,4 @@ void exibir_mapa (Estado_jogo *jogo){
     printf("Pontos coletados:%d \n",jogo->pontosColetados);
     printf("Pontos Restantes:%d",jogo->pontosRestantes);
 }
+

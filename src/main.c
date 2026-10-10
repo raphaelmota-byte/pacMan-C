@@ -2,7 +2,9 @@
 #include <string.h>
 #include <stdlib.h> // Para srand()
 #include <time.h> // para time()
-#include "mapa.h" 
+#include "mapa.h" // Usamos aspas duplas para importar nossos próprios .h
+#include "core.h"
+
 
 
 int main() {
@@ -26,10 +28,14 @@ int main() {
 
     // 4. conta quantos pontos restam para serem pegos
     contar_pontos (&meu_jogo);
-    
+
     //5. limpa o terminal anterior , imprime o mapa com os placares de pontos (restantes e pegos)
     exibir_mapa (&meu_jogo);
 
+    // mantem a tecla em loop
+    loop_jogo(&meu_jogo);
+
+   
    
     return 0;
 }
