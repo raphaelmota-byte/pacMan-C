@@ -9,7 +9,7 @@ void carregar_cenario(Estado_jogo *jogo, char *caminhoArquivo);
 void sortear_caminho_mapa(char *caminho);
 void Encontrar_Entidades (Estado_jogo *jogo );
 void contar_pontos (Estado_jogo *jogo);
-
+void exibir_mapa (Estado_jogo *jogo);
 
 
 #endif

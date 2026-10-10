@@ -24,8 +24,11 @@ int main() {
     // x = coluna e y= linha
     Encontrar_Entidades (&meu_jogo);
 
+    // 4. conta quantos pontos restam para serem pegos
     contar_pontos (&meu_jogo);
 
+    exibir_mapa (&meu_jogo);
+    
    
     return 0;
 }

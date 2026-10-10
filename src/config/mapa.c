@@ -84,4 +84,15 @@ void contar_pontos (Estado_jogo *jogo){
     printf("Pontos Restantes: %d \n", jogo->pontosRestantes);
 }
 
-
+void exibir_mapa (Estado_jogo *jogo){
+    system("cls");
+    int linha;
+    for (linha=0 ; linha<jogo->qtdLinhas;linha++){
+        //exibir a matriz (campo de jogo)
+        printf("%s",jogo->mapa[linha]);
+        printf("\n");
+    }
+    // placares de pontos 
+    printf("Pontos coletados:%d \n",jogo->pontosColetados);
+    printf("Pontos Restantes:%d",jogo->pontosRestantes);
+}
