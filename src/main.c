@@ -26,9 +26,10 @@ int main() {
 
     // 4. conta quantos pontos restam para serem pegos
     contar_pontos (&meu_jogo);
-
-    exibir_mapa (&meu_jogo);
     
+    //5. limpa o terminal anterior , imprime o mapa com os placares de pontos (restantes e pegos)
+    exibir_mapa (&meu_jogo);
+
    
     return 0;
 }
