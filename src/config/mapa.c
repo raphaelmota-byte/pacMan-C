@@ -36,6 +36,8 @@ void carregar_cenario(Estado_jogo *jogo, char *caminhoArquivo){
         qtd_linhas++; 
     }
     
+    jogo -> qtdLinhas = qtd_linhas;
+
     fclose(meu_arquivo); 
     
     // Imprime para confirmar
@@ -44,4 +46,42 @@ void carregar_cenario(Estado_jogo *jogo, char *caminhoArquivo){
         printf("%s\n", jogo -> mapa[i]);
     }
 }
+
+// feito por gb 
+void Encontrar_Entidades (Estado_jogo *jogo ){
+jogo->qtdFantasmas = 0;
+    int linha, coluna;
+    for (linha = 0; linha < jogo->qtdLinhas; linha++){
+        for (coluna = 0; coluna <strlen(jogo->mapa[linha]); coluna++){
+            if (jogo-> mapa[linha][coluna]=='P'){
+                jogo -> jogador.x = coluna;
+                jogo -> jogador.y = linha;
+            }
+            if (jogo ->mapa[linha][coluna]=='G'){
+                jogo-> fantasmas[jogo->qtdFantasmas].pos.x = coluna;
+                jogo-> fantasmas[jogo->qtdFantasmas].pos.y = linha;
+                jogo->qtdFantasmas ++;
+            }
+        }
+    }
+    //testes
+    printf("\n jogador: x=%d y=%d \n", jogo->jogador.x , jogo->jogador.y);
+    printf("fantasma 0: x=%d y=%d\n", jogo->fantasmas[0].pos.x, jogo->fantasmas[0].pos.y);
+    printf("fantasma 1: x=%d y=%d\n", jogo->fantasmas[1].pos.x, jogo->fantasmas[1].pos.y);
+}
+
+void contar_pontos (Estado_jogo *jogo){
+    int linha, coluna;
+    jogo->pontosRestantes = 0;
+    jogo->pontosColetados = 0;
+    for (linha = 0; linha < jogo->qtdLinhas; linha++){
+        for (coluna = 0; coluna <strlen(jogo->mapa[linha]); coluna++){
+            if (jogo -> mapa[linha][coluna]=='.'){
+                jogo-> pontosRestantes ++;
+            }
+        }
+    }
+    printf("Pontos Restantes: %d \n", jogo->pontosRestantes);
+}
+
 

@@ -20,6 +20,12 @@ int main() {
     // 2. Carrega o cenário usando a string sorteada
     carregar_cenario(&meu_jogo, caminho_sorteado);
 
+    // 3.encontra jogador e fantasmas no mapa
+    // x = coluna e y= linha
+    Encontrar_Entidades (&meu_jogo);
 
+    contar_pontos (&meu_jogo);
+
+   
     return 0;
 }

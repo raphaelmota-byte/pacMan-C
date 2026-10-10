@@ -26,6 +26,7 @@ typedef struct{
     Posicao jogador;
     Fantasma fantasmas[10];
     int qtdFantasmas;
+    int qtdLinhas;
     int pontosColetados;
     int pontosRestantes;
     int dificuldade; // 1 = Fácil, 2 = Difícil
