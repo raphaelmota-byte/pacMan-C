@@ -44,7 +44,7 @@ Certifique-se de ter o compilador `gcc` instalado. No terminal, na raiz do proje
 ```bash
 # Compilando o projeto
 
-gcc src\main.c src\config\mapa.c src\entidades\jogador.c src\entidades\fantasma.c -I include -o src\output\pacman.exe 
+gcc src\main.c src\config\mapa.c src\entidades\jogador.c src\entidades\fantasma.c src\regras\regras.c -I include -o src\output\pacman.exe
 
 # Rodando o jogo (Linux/Mac)
 ./pacman

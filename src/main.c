@@ -6,6 +6,7 @@
 #include "estado.h"
 #include "mapa.h"
 #include "entidades.h"
+#include "regras.h"
 
 int main() {
 
@@ -56,13 +57,22 @@ int main() {
         // Verifica se é uma tecla de movimento válida
         if (tecla == 'w' || tecla == 'a' || tecla == 's' || tecla == 'd') {
             
-            // --- ORQUESTRAÇÃO FUTURA DAS FUNÇÕES ---
             mover_jogador(&meu_jogo , tecla);
             mover_todos_fantasmas(&meu_jogo);
             
             // Atualiza a tela após processar a rodada
             exibir_mapa(&meu_jogo);
             mostrar_pontos_atuais(&meu_jogo);
+
+            if (verificar_colisao(&meu_jogo)) {
+            printf("\nGAME OVER! O fantasma te pegou!\n");
+            break; 
+            }
+
+            if (verificar_vitoria(&meu_jogo)) {
+                printf("\nPARABÉNS! Você limpou o labirinto!\n");
+                break;
+            }
             
         } else if (tecla != 'q') {
             printf("\nTecla nao reconhecida. Tente w, a, s, d.\n");

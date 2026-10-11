@@ -63,10 +63,7 @@ jogo->qtdFantasmas = 0;
             }
         }
     }
-    // //testes
-    // printf("\n jogador: x=%d y=%d \n", jogo->jogador.x , jogo->jogador.y);
-    // printf("fantasma 0: x=%d y=%d\n", jogo->fantasmas[0].pos.x, jogo->fantasmas[0].pos.y);
-    // printf("fantasma 1: x=%d y=%d\n", jogo->fantasmas[1].pos.x, jogo->fantasmas[1].pos.y);
+ 
 }
 
 void contar_pontos (Estado_jogo *jogo){

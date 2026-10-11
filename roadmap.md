@@ -23,7 +23,7 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 - [X] Criar o menu inicial perguntando a dificuldade (1 = Fácil, 2 = Difícil).
 - [X] Implementar o loop onde cada fantasma escolhe uma direção aleatória.
 - [X] Garantir que o fantasma não apague os pontos (`.`) quando passar por cima deles (usar a variável `itemAnterior` da struct).
-- [ ] Implementar a checagem de Game Over (se a coordenada do jogador for igual à do fantasma).
+- [X] Implementar a checagem de Game Over (se a coordenada do jogador for igual à do fantasma).
 
 ## Fase 5: Inteligência Artificial (Modo Difícil)
 - [ ] Implementar a lógica matemática de aproximação (comparar o `x` e o `y` do fantasma com o do jogador).
