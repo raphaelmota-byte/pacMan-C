@@ -24,15 +24,14 @@ Para manter o código limpo, o projeto utiliza a seguinte arquitetura de pastas:
 meu_pacman/
 ├── data/                   # Mapas em txt (mapa1.txt, mapa2.txt)
 ├── include/                # Headers (.h)
-│   ├── config.h
-│   ├── core.h
+│   ├── mapa.h
+│   ├── estado.h
 │   └── entidades.h
 └── src/                    # Código-fonte (.c)
     ├── main.c              
     ├── config/
-    │   └── mapa_loader.c   
-    ├── core/
-    │   └── motor_jogo.c    
+    │   └── mapa.c   
+    │   
     └── entidades/
         ├── jogador.c       
         └── fantasmas.c     
