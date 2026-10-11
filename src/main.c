@@ -13,8 +13,34 @@ int main() {
     // Sem isso, a função rand() repetiria sempre a mesma sequência de mapas.
     srand(time(NULL)); 
     Estado_jogo meu_jogo;
-    char caminho_sorteado[50]; // String vazia para receber o caminho
     
+    meu_jogo.pontosColetados = 0;
+    meu_jogo.pontosRestantes = 0;
+    meu_jogo.qtdFantasmas = 0;
+
+    // --- MENU DE DIFICULDADE ---
+    do {
+        system("cls || clear"); // Limpa o ecrã
+        printf("=== BEM-VINDO AO PAC-MAN ===\n\n");
+        printf("Escolha o nivel de dificuldade:\n");
+        printf("1 - Facil (Fantasmas movem-se de forma aleatoria)\n");
+        printf("2 - Dificil (Fantasmas perseguem o Pac-Man)\n\n");
+        printf("Digite a sua opcao (1 ou 2): ");
+        
+        scanf("%d", &meu_jogo.dificuldade);
+        
+        if (meu_jogo.dificuldade != 1 && meu_jogo.dificuldade != 2) {
+            printf("\nOpcao invalida! Pressione Enter para tentar novamente...");
+            while(getchar() != '\n'); // Limpa o buffer
+            getchar(); // Pausa para o utilizador ler
+        }
+    } while (meu_jogo.dificuldade != 1 && meu_jogo.dificuldade != 2);
+
+    // Limpeza de buffer crucial: o scanf deixa um '\n' (Enter) pendurado na memória. 
+    // Se não o limparmos, a tua função 'captura_tecla()' pode lê-lo acidentalmente no primeiro turno.
+    while(getchar() != '\n');
+    
+    char caminho_sorteado[50]; // String vazia para receber o caminho
     sortear_caminho_mapa(caminho_sorteado);
     carregar_cenario(&meu_jogo, caminho_sorteado);
     Encontrar_Entidades(&meu_jogo);
