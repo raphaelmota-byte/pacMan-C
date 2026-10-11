@@ -14,7 +14,7 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 - [X] Implementar a função de limpar a tela e redesenhar o mapa com o placar de pontos.
 
 ## Fase 3: Movimentação do Jogador
-- [ ] Capturar a tecla do usuário (`W, A, S, D`).
+- [X] Capturar a tecla do usuário (`W, A, S, D`).
 - [ ] Fazer o jogador se mover (trocando o `P` de lugar na matriz com um espaço vazio ` `).
 - [ ] Implementar a verificação de parede (impedir que o `P` ande por cima de um `#`).
 - [ ] Fazer o jogador "comer" os pontos (`.`), somando em `pontosColetados` e diminuindo de `pontosRestantes`.

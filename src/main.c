@@ -5,7 +5,7 @@
 
 #include "estado.h"
 #include "mapa.h"
-#include "jogador.h"
+#include "entidades.h"
 
 int main() {
 

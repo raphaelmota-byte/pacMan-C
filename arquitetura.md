@@ -41,7 +41,7 @@ typedef struct {
 - **`void exibir_mapa(Estado_jogo *jogo);`**
   - Limpa o console e imprime a matriz atualizada junto com o placar.
 
-### 🏃 `include/jogador.h` (Lógica do Pac-Man)
+### 🏃 `include/entidades.h` (Lógica do Pac-Man)
 - **`int captura_tecla(void);`**
   - Captura a entrada do usuário de forma contínua.
 - **`void mover_jogador(Estado_jogo *jogo, int tecla);`**
