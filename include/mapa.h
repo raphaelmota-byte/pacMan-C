@@ -10,6 +10,8 @@ void sortear_caminho_mapa(char *caminho);
 void Encontrar_Entidades (Estado_jogo *jogo );
 void contar_pontos (Estado_jogo *jogo);
 void exibir_mapa (Estado_jogo *jogo);
+void mostrar_pontos_atuais(Estado_jogo *jogo);
+int eh_movimento_valido(Estado_jogo *jogo, int x, int y);
 
 
 #endif

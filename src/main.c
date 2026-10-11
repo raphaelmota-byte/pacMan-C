@@ -32,11 +32,12 @@ int main() {
         if (tecla == 'w' || tecla == 'a' || tecla == 's' || tecla == 'd') {
             
             // --- ORQUESTRAÇÃO FUTURA DAS FUNÇÕES ---
-            // mover_jogador(&meu_jogo, tecla);
+            mover_jogador(&meu_jogo , tecla);
             // mover_fantasmas(&meu_jogo);
             
             // Atualiza a tela após processar a rodada
             exibir_mapa(&meu_jogo);
+            mostrar_pontos_atuais(&meu_jogo);
             
         } else if (tecla != 'q') {
             printf("\nTecla nao reconhecida. Tente w, a, s, d.\n");

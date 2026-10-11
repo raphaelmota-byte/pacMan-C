@@ -62,10 +62,10 @@ jogo->qtdFantasmas = 0;
             }
         }
     }
-    //testes
-    printf("\n jogador: x=%d y=%d \n", jogo->jogador.x , jogo->jogador.y);
-    printf("fantasma 0: x=%d y=%d\n", jogo->fantasmas[0].pos.x, jogo->fantasmas[0].pos.y);
-    printf("fantasma 1: x=%d y=%d\n", jogo->fantasmas[1].pos.x, jogo->fantasmas[1].pos.y);
+    // //testes
+    // printf("\n jogador: x=%d y=%d \n", jogo->jogador.x , jogo->jogador.y);
+    // printf("fantasma 0: x=%d y=%d\n", jogo->fantasmas[0].pos.x, jogo->fantasmas[0].pos.y);
+    // printf("fantasma 1: x=%d y=%d\n", jogo->fantasmas[1].pos.x, jogo->fantasmas[1].pos.y);
 }
 
 void contar_pontos (Estado_jogo *jogo){
@@ -90,8 +90,17 @@ void exibir_mapa (Estado_jogo *jogo){
         printf("%s",jogo->mapa[linha]);
         printf("\n");
     }
-    // placares de pontos 
+    
+}
+void mostrar_pontos_atuais(Estado_jogo *jogo){
     printf("Pontos coletados:%d \n",jogo->pontosColetados);
     printf("Pontos Restantes:%d",jogo->pontosRestantes);
 }
 
+int eh_movimento_valido(Estado_jogo *jogo, int x, int y) {
+    // Verifica se a próxima posição bate em uma parede
+    if (jogo->mapa[y][x] == '#') {
+        return 0; // Falso, movimento bloqueado
+    }
+    return 1; // Verdadeiro, caminho livre
+}

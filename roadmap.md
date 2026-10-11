@@ -15,9 +15,9 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 
 ## Fase 3: Movimentação do Jogador
 - [X] Capturar a tecla do usuário (`W, A, S, D`).
-- [ ] Fazer o jogador se mover (trocando o `P` de lugar na matriz com um espaço vazio ` `).
-- [ ] Implementar a verificação de parede (impedir que o `P` ande por cima de um `#`).
-- [ ] Fazer o jogador "comer" os pontos (`.`), somando em `pontosColetados` e diminuindo de `pontosRestantes`.
+- [X] Fazer o jogador se mover (trocando o `P` de lugar na matriz com um espaço vazio ` `).
+- [X] Implementar a verificação de parede (impedir que o `P` ande por cima de um `#`).
+- [X] Fazer o jogador "comer" os pontos (`.`), somando em `pontosColetados` e diminuindo de `pontosRestantes`.
 
 ## Fase 4: O Básico dos Fantasmas (Modo Fácil)
 - [ ] Criar o menu inicial perguntando a dificuldade (1 = Fácil, 2 = Difícil).
