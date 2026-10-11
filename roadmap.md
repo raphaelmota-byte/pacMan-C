@@ -20,9 +20,9 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 - [X] Fazer o jogador "comer" os pontos (`.`), somando em `pontosColetados` e diminuindo de `pontosRestantes`.
 
 ## Fase 4: O Básico dos Fantasmas (Modo Fácil)
-- [ ] Criar o menu inicial perguntando a dificuldade (1 = Fácil, 2 = Difícil).
-- [ ] Implementar o loop onde cada fantasma escolhe uma direção aleatória.
-- [ ] Garantir que o fantasma não apague os pontos (`.`) quando passar por cima deles (usar a variável `itemAnterior` da struct).
+- [X] Criar o menu inicial perguntando a dificuldade (1 = Fácil, 2 = Difícil).
+- [X] Implementar o loop onde cada fantasma escolhe uma direção aleatória.
+- [X] Garantir que o fantasma não apague os pontos (`.`) quando passar por cima deles (usar a variável `itemAnterior` da struct).
 - [ ] Implementar a checagem de Game Over (se a coordenada do jogador for igual à do fantasma).
 
 ## Fase 5: Inteligência Artificial (Modo Difícil)

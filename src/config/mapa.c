@@ -58,6 +58,7 @@ jogo->qtdFantasmas = 0;
             if (jogo ->mapa[linha][coluna]=='G'){
                 jogo-> fantasmas[jogo->qtdFantasmas].pos.x = coluna;
                 jogo-> fantasmas[jogo->qtdFantasmas].pos.y = linha;
+                jogo->fantasmas[jogo->qtdFantasmas].itemAnterior = ' ';
                 jogo->qtdFantasmas ++;
             }
         }

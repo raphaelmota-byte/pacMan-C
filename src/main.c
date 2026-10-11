@@ -37,7 +37,6 @@ int main() {
     } while (meu_jogo.dificuldade != 1 && meu_jogo.dificuldade != 2);
 
     // Limpeza de buffer crucial: o scanf deixa um '\n' (Enter) pendurado na memória. 
-    // Se não o limparmos, a tua função 'captura_tecla()' pode lê-lo acidentalmente no primeiro turno.
     while(getchar() != '\n');
     
     char caminho_sorteado[50]; // String vazia para receber o caminho
@@ -59,7 +58,7 @@ int main() {
             
             // --- ORQUESTRAÇÃO FUTURA DAS FUNÇÕES ---
             mover_jogador(&meu_jogo , tecla);
-            // mover_fantasmas(&meu_jogo);
+            mover_todos_fantasmas(&meu_jogo);
             
             // Atualiza a tela após processar a rodada
             exibir_mapa(&meu_jogo);
