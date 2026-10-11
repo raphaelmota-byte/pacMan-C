@@ -42,11 +42,7 @@ void carregar_cenario(Estado_jogo *jogo, char *caminhoArquivo){
 
     fclose(meu_arquivo); 
     
-    // Imprime para confirmar
-    printf("Mapa carregado com sucesso (%d linhas):\n", qtd_linhas);
-    for (int i = 0; i < qtd_linhas; i++) {
-        printf("%s\n", jogo -> mapa[i]);
-    }
+  
 }
 
 // feito por gb 

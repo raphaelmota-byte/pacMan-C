@@ -2,10 +2,10 @@
 #include <string.h>
 #include <stdlib.h> // Para srand()
 #include <time.h> // para time()
-#include "mapa.h" // Usamos aspas duplas para importar nossos próprios .h
-#include "core.h"
 
-
+#include "estado.h"
+#include "mapa.h"
+#include "jogador.h"
 
 int main() {
 
@@ -13,29 +13,41 @@ int main() {
     // Sem isso, a função rand() repetiria sempre a mesma sequência de mapas.
     srand(time(NULL)); 
     Estado_jogo meu_jogo;
-    
     char caminho_sorteado[50]; // String vazia para receber o caminho
     
-    // 1. Sorteia o caminho e salva na string
     sortear_caminho_mapa(caminho_sorteado);
-    
-    // 2. Carrega o cenário usando a string sorteada
     carregar_cenario(&meu_jogo, caminho_sorteado);
+    Encontrar_Entidades(&meu_jogo);
+    contar_pontos(&meu_jogo);
+    
+    // Exibe o mapa na tela pela primeira vez
+    exibir_mapa(&meu_jogo);
 
-    // 3.encontra jogador e fantasmas no mapa
-    // x = coluna e y= linha
-    Encontrar_Entidades (&meu_jogo);
+    int tecla;
+    do {
+        printf("\nInsira as teclas de movimento (w, a, s, d) ou q para parar: ");
+        tecla = captura_tecla(); 
+        
+        // Verifica se é uma tecla de movimento válida
+        if (tecla == 'w' || tecla == 'a' || tecla == 's' || tecla == 'd') {
+            
+            // --- ORQUESTRAÇÃO FUTURA DAS FUNÇÕES ---
+            // mover_jogador(&meu_jogo, tecla);
+            // mover_fantasmas(&meu_jogo);
+            
+            // Atualiza a tela após processar a rodada
+            exibir_mapa(&meu_jogo);
+            
+        } else if (tecla != 'q') {
+            printf("\nTecla nao reconhecida. Tente w, a, s, d.\n");
+        }
+        
+    } while (tecla != 'q');
+    
+    printf("\nJogo encerrado!\n");
 
-    // 4. conta quantos pontos restam para serem pegos
-    contar_pontos (&meu_jogo);
 
-    //5. limpa o terminal anterior , imprime o mapa com os placares de pontos (restantes e pegos)
-    exibir_mapa (&meu_jogo);
+  
 
-    // mantem a tecla em loop
-    loop_jogo(&meu_jogo);
-
-   
-   
     return 0;
 }
