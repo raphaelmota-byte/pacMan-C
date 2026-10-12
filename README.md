@@ -26,12 +26,16 @@ meu_pacman/
 ├── include/                # Headers (.h)
 │   ├── mapa.h
 │   ├── estado.h
+    ├── regras.h
 │   └── entidades.h
 └── src/                    # Código-fonte (.c)
     ├── main.c              
     ├── config/
     │   └── mapa.c   
-    │   
+    │ 
+    |── regras/           
+    |   └── regras.c
+    |
     └── entidades/
         ├── jogador.c       
         └── fantasmas.c     

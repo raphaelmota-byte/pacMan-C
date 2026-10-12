@@ -34,4 +34,3 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 - [X] Verificar se o jogo encerra e mostra a mensagem de "Vitória" quando `pontosRestantes == 0`.
 - [ ] Revisar se não há nenhum `include` de arquivo `.c` solto (apenas `.h`).
 - [ ] Testar no laboratório ou no sistema Windows/Linux para garantir a compatibilidade (especialmente a parte de limpar a tela).
-s
