@@ -1,3 +1,6 @@
+// TRABALHO DA DISCIPLINA Construção de Algoritmos 
+//ALUNOS: RAPHAEL CATANDUBA E GABRIEL CATANDUBA
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h> // Para srand()
