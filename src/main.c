@@ -64,6 +64,13 @@ int main() {
         if (tecla == 'w' || tecla == 'a' || tecla == 's' || tecla == 'd') {
             
             mover_jogador(&meu_jogo , tecla);
+
+            if (verificar_colisao(&meu_jogo)) {
+                exibir_mapa(&meu_jogo);
+                printf("\nGAME OVER! O fantasma te pegou!\n");
+                break; 
+            }
+            
             mover_todos_fantasmas(&meu_jogo);
             
             // Atualiza a tela após processar a rodada
