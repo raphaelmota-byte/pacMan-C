@@ -26,7 +26,7 @@ meu_pacman/
 ├── include/                # Headers (.h)
 │   ├── mapa.h
 │   ├── estado.h
-    ├── regras.h
+|   ├── regras.h
 │   └── entidades.h
 └── src/                    # Código-fonte (.c)
     ├── main.c              
