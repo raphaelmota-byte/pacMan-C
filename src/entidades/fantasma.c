@@ -52,14 +52,60 @@ void mover_fantasma_aleatorio(Estado_jogo *jogo, int indice_fantasma) {
 
     // 1. Pede para o helper sortear a direção (passando o endereço & das variáveis)
     sortear_direcao_valida(jogo, indice_fantasma, &proximo_x, &proximo_y);
-    
+
     // 2. Aplica o movimento
     aplicar_movimento_fantasma(jogo, indice_fantasma, proximo_x, proximo_y);
 
 }
 
 void mover_fantasma_perseguidor(Estado_jogo *jogo, int indice_fantasma) {
-    // Lógica de cálculo de distância (Delta X e Delta Y) para o fantasma específico
+    int x_atual = jogo->fantasmas[indice_fantasma].pos.x;
+    int y_atual = jogo->fantasmas[indice_fantasma].pos.y;
+    
+    // 1. Calcula a distância Absoluta (Delta) em X e Y
+    int delta_x = abs(jogo->jogador.x - x_atual);
+    int delta_y = abs(jogo->jogador.y - y_atual);
+    
+    int passo_x = (jogo->jogador.x > x_atual) ? 1 : -1;
+    int passo_y = (jogo->jogador.y > y_atual) ? 1 : -1;
+
+    int proximo_x = x_atual;
+    int proximo_y = y_atual;
+    int moveu = 0;
+
+    // 2. Identifica o Eixo Dominante e tenta o movimento[cite: 2]
+    if (delta_x > delta_y) {
+        // Tenta primeiro se mover na horizontal (Eixo dominante X)[cite: 2]
+        if (eh_movimento_valido(jogo, x_atual + passo_x, y_atual) && jogo->mapa[y_atual][x_atual + passo_x] != 'G') {
+            proximo_x += passo_x; 
+            moveu = 1;
+        } 
+        // Se o movimento no eixo dominante for bloqueado por uma parede, tenta o eixo secundário[cite: 2]
+        else if (eh_movimento_valido(jogo, x_atual, y_atual + passo_y) && jogo->mapa[y_atual + passo_y][x_atual] != 'G') {
+            proximo_y += passo_y; 
+            moveu = 1;
+        }
+    } else {
+        // Tenta primeiro se mover na vertical (Eixo dominante Y)
+        if (eh_movimento_valido(jogo, x_atual, y_atual + passo_y) && jogo->mapa[y_atual + passo_y][x_atual] != 'G') {
+            proximo_y += passo_y; 
+            moveu = 1;
+        } 
+        // Se o movimento no eixo dominante for bloqueado por uma parede, tenta o eixo secundário[cite: 2]
+        else if (eh_movimento_valido(jogo, x_atual + passo_x, y_atual) && jogo->mapa[y_atual][x_atual + passo_x] != 'G') {
+            proximo_x += passo_x; 
+            moveu = 1;
+        }
+    }
+
+    // 3. Mecanismo Anti-Travamento (Fallback)[cite: 2]
+    // Se ambos os eixos estiverem bloqueados, escolhe uma direção aleatória para desviar usando a nova função com ponteiros[cite: 2]
+    if (!moveu) {
+        sortear_direcao_valida(jogo, indice_fantasma, &proximo_x, &proximo_y);
+    }
+
+    // 4. Delega o "Agir": aplica a movimentação física no labirinto
+    aplicar_movimento_fantasma(jogo, indice_fantasma, proximo_x, proximo_y);
 }
 
 void mover_todos_fantasmas(Estado_jogo *jogo) {

@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h> // Para srand()
 #include <time.h> // para time()
+#include <locale.h>
 
 #include "estado.h"
 #include "mapa.h"
@@ -9,6 +10,8 @@
 #include "regras.h"
 
 int main() {
+
+    setlocale(LC_ALL, "pt_BR.UTF-8");
 
     // Inicialização da semente aleatória com srand(time(NULL)) para garantir escolhas distintas a cada execução do jogo
     // Sem isso, a função rand() repetiria sempre a mesma sequência de mapas.

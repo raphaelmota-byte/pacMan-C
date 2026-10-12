@@ -26,11 +26,12 @@ Siga esta ordem para evitar frustrações. Teste cada etapa isoladamente antes d
 - [X] Implementar a checagem de Game Over (se a coordenada do jogador for igual à do fantasma).
 
 ## Fase 5: Inteligência Artificial (Modo Difícil)
-- [ ] Implementar a lógica matemática de aproximação (comparar o `x` e o `y` do fantasma com o do jogador).
-- [ ] Testar se o fantasma persegue corretamente sem atravessar paredes.
-- [ ] Adicionar o "fallback" (se ele bater de frente com uma parede tentando seguir o jogador, ele deve tentar desviar pelos lados).
+- [X] Implementar a lógica matemática de aproximação (comparar o `x` e o `y` do fantasma com o do jogador).
+- [X] Testar se o fantasma persegue corretamente sem atravessar paredes.
+- [X] Adicionar o "fallback" (se ele bater de frente com uma parede tentando seguir o jogador, ele deve tentar desviar pelos lados).
 
 ## Fase 6: Polimento Final
-- [ ] Verificar se o jogo encerra e mostra a mensagem de "Vitória" quando `pontosRestantes == 0`.
+- [X] Verificar se o jogo encerra e mostra a mensagem de "Vitória" quando `pontosRestantes == 0`.
 - [ ] Revisar se não há nenhum `include` de arquivo `.c` solto (apenas `.h`).
 - [ ] Testar no laboratório ou no sistema Windows/Linux para garantir a compatibilidade (especialmente a parte de limpar a tela).
+s
